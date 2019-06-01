@@ -4,18 +4,22 @@ CC		=	clang++
 
 FLAG	=	-Wall -Wextra -Werror -lncurses
 
-NAME    =	R-Type
+NAME    =	ft_gkrellm
 
-SRC     =   main.cpp
+SRC     =   main.cpp			\
+			Modules/Hostname.cpp 		\
+			Modules/IMonitorModule.cpp	\
+			Modules/Username.cpp		\
+			IMonitorDisplay.cpp			
+			
             
 OBJ     =	$(patsubst srcs/%.cpp,obj/%.o,$(SRC))
 
-INCLUDE =	
+INCLUDE	=	Modules/Hostname.hpp 		\
+			Modules/IMonitorModule.hpp	\
+			Modules/Username.hpp		\
+			IMonitorDisplay.hpp
 			
-
-
-			
-
 all: $(NAME) 
 
 $(NAME): $(OBJ) $(INCLUDE)
