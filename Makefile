@@ -2,17 +2,41 @@
 
 CC		=	clang++
 
-FLAG	=	-Wall -Wextra -Werror
+FLAG	=	-Wall -Wextra -Werror -lncurses
 
-NAME    =	find
+NAME    =	R-Type
 
-SRC     =   srcs/main.cpp
-	
+SRC     =   main.cpp						\
+			Model/MovingObject/AMovingObject.cpp 		\
+			Model/MovingObject/Enemy.cpp         		\
+			Model/MovingObject/Rocket.cpp         		\
+			Model/MovingObject/Meteor.cpp         		\
+			Model/Object.cpp        		\
+			Model/ObjectList.cpp    		\
+			Model/RocketList.cpp    		\
+			Model/Player.cpp        		\
+			Vue/Render.cpp        		\
+			Model/Vector.cpp				\
+			Model/MovingObject/Spaceship.cpp
+
             
 OBJ     =	$(patsubst srcs/%.cpp,obj/%.o,$(SRC))
 
-INCLUDE	=	includes/easyfind.hpp
+INCLUDE =	Model/MovingObject/AMovingObject.hpp			\
+			Model/MovingObject/Enemy.hpp         		\
+			Model/MovingObject/Rocket.hpp         		\
+			Model/MovingObject/Meteor.hpp         		\
+			Model/Object.hpp        		\
+			Model/ObjectList.hpp    		\
+			Model/RocketList.hpp    		\
+			Model/Player.hpp        		\
+			Vue/Render.hpp        		\
+			Model/Vector.hpp				\
+			Model/MovingObject/Spaceship.hpp
+
+
 			
+
 all: $(NAME) 
 
 $(NAME): $(OBJ) $(INCLUDE)
