@@ -11,7 +11,7 @@ SRC     =   srcs/main.cpp
             
 OBJ     =	$(patsubst srcs/%.cpp,obj/%.o,$(SRC))
 
-INCLUDE	=	includes/easyfind.hpp
+INCLUDE	=	Modules/Hostname.hpp Modules/IMonitorModule.hpp
 			
 all: $(NAME) 
 
