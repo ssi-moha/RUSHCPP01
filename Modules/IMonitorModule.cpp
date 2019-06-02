@@ -16,9 +16,3 @@ IMonitorModule &	IMonitorModule::operator=(IMonitorModule const & rhs) {
     (void)rhs;
     return *this;   
 }
-
-std::string	IMonitorModule::getFormattedInfo( void ) const {
-    std::string formattedString = "yo";
-
-    return formattedString;
-}

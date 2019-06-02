@@ -13,7 +13,7 @@ public:
 
     IMonitorModule &  operator=(IMonitorModule const & rhs);
 
-    virtual std::string getFormattedInfo( void ) const;
+    virtual std::string getFormattedInfo( void ) const = 0;
 
 };
 

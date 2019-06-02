@@ -2,16 +2,16 @@
 
 #include "IMonitorDisplay.hpp"
 
-IMonitorDisplay::IMonitorDisplay(std::vector<IMonitorModule> moduleTab) : _moduleTab(moduleTab) {
+IMonitorDisplay::IMonitorDisplay(std::vector<IMonitorModule*> moduleTab) : _moduleTab(moduleTab) {
     initscr();
     display(moduleTab);
 }
 
 IMonitorDisplay::~IMonitorDisplay() {
-
+    endwin();
 }
 
-void    IMonitorDisplay::display(std::vector<IMonitorModule> moduleTab) {
+void    IMonitorDisplay::display(std::vector<IMonitorModule*> moduleTab) {
 
 
     
@@ -21,14 +21,17 @@ void    IMonitorDisplay::display(std::vector<IMonitorModule> moduleTab) {
     int moduleWidth = 30;
     int moduleHeigth = LINES / (1 + ((moduleTab.size() + 1) * moduleWidth / COLS ));
 
+    this->_moduleTab = moduleTab;
 
-    for (unsigned int i = 0; i <= moduleTab.size(); i++) {
-        _windowTab.push_back(subwin(stdscr, moduleHeigth , moduleWidth , line * moduleHeigth , col * moduleWidth  ));
-        box(_windowTab.back(), ACS_VLINE, ACS_HLINE) ;
-        mvwprintw(_windowTab.back(), 1,1, "%s", _moduleTab.back().getFormattedInfo().c_str() );
+    for (unsigned int i = 0; i < _moduleTab.size(); i++) {
+        
+        _windowTab.push_back(subwin(stdscr, moduleHeigth , moduleWidth , line * moduleHeigth , col * moduleWidth));
+        box(_windowTab[i], ACS_VLINE, ACS_HLINE) ;
+        mvwprintw(_windowTab[i], 1,2, "%s", _moduleTab[i]->getFormattedInfo().c_str() );
+
         wrefresh(_windowTab[i]);
         col++;
-        if (col * moduleWidth > COLS)
+        if (col * moduleWidth > COLS - moduleWidth)
         {
             col = 0;
             line++;
@@ -37,21 +40,7 @@ void    IMonitorDisplay::display(std::vector<IMonitorModule> moduleTab) {
 }
 
 void    IMonitorDisplay::run() {
-
-
-    //WINDOW *haut;
-    
-    //haut= subwin(stdscr, LINES / 2, COLS, 0, 0);        // Créé une fenêtre de 'LINES / 2' lignes et de COLS colonnes en 0, 0
-    //bas= subwin(stdscr, LINES / 2, COLS, LINES / 2, 0); // Créé la même fenêtre que ci-dessus sauf que les coordonnées changent
-    
-    
-    //wrefresh(bas);
     
     getch();
-    endwin();
     
-    //free(haut);
-    //free(bas);
-
-
 }

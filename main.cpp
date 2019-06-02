@@ -1,5 +1,8 @@
 #include "Modules/Hostname.hpp"
 #include "Modules/Username.hpp"
+#include "Modules/OsInfo.hpp"
+#include "Modules/Date.hpp"
+
 #include <iostream>
 #include <ncurses.h>
 #include <unistd.h>
@@ -9,18 +12,13 @@
 
 int main()
 {	
-    std::vector<IMonitorModule> moduleTab;
-    
-    moduleTab.push_back(Hostname());
-    moduleTab.push_back(Username());
-    moduleTab.push_back(Hostname());
-    moduleTab.push_back(Username());
-    moduleTab.push_back(Hostname());
-    moduleTab.push_back(Hostname());
-    moduleTab.push_back(Username());
-    moduleTab.push_back(Hostname());
-    moduleTab.push_back(Username());
-    moduleTab.push_back(Hostname());
+    std::vector<IMonitorModule*> moduleTab;
+
+    moduleTab.push_back(new Hostname());
+    moduleTab.push_back(new Username());
+    moduleTab.push_back(new OsInfo());
+    moduleTab.push_back(new Date());
+
 
 
     IMonitorDisplay display(moduleTab);
