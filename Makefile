@@ -6,12 +6,22 @@ FLAG	=	-Wall -Wextra -Werror
 
 NAME    =	find
 
-SRC     =   srcs/main.cpp
+SRC     =   srcs/main.cpp \
+			Modules/Hostname.cpp \
+			Modules/IMonitorModule.cpp \
+			Modules/Date.cpp \
+			Modules/OsInfo.cpp \
+			Modules/Username.cpp
 	
             
 OBJ     =	$(patsubst srcs/%.cpp,obj/%.o,$(SRC))
 
-INCLUDE	=	Modules/Hostname.hpp Modules/IMonitorModule.hpp
+INCLUDE	=	Modules/Hostname.hpp \
+			Modules/IMonitorModule.hpp \
+			Modules/Date.hpp \
+			Modules/OsInfo.hpp \
+			Modules/Username.hpp
+
 			
 all: $(NAME) 
 

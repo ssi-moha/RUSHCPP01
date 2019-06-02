@@ -13,7 +13,8 @@ public:
 
     Hostname &  operator=(Hostname const & rhs);
 
-    std::string    getHostname(void) const;
+    std::string         getHostname( void ) const;
+    virtual std::string getFormattedInfo( void ) const;
 
 private:
 

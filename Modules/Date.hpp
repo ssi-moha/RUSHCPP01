@@ -12,8 +12,9 @@ public:
 
     Date &  operator=(Date const & rhs);
 
-    std::string today(void) const ;
-    std::string now(void) const ;
+    std::string today(void) const;
+    std::string now(void) const;
+    virtual std::string getFormattedInfo( void ) const;
 
 private:
 
