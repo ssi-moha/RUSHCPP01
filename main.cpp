@@ -26,5 +26,10 @@ int main()
 
     display.run();
 
+    std::cout << hostname.getFormattedInfo() << std::endl;
+    std::cout << username.getFormattedInfo() << std::endl;
+    std::cout << osInfo.getFormattedInfo() << std::endl;
+    std::cout << date.getFormattedInfo() << std::endl;
+    
     return 0;
 }

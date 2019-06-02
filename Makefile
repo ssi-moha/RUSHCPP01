@@ -6,19 +6,22 @@ FLAG	=	-Wall -Wextra -Werror -lncurses
 
 NAME    =	ft_gkrellm
 
-SRC     =   main.cpp			\
-			Modules/Hostname.cpp 		\
-			Modules/IMonitorModule.cpp	\
-			Modules/Username.cpp		\
-			IMonitorDisplay.cpp			
-			
+SRC     =   srcs/main.cpp \
+			Modules/Hostname.cpp \
+			Modules/IMonitorModule.cpp \
+			Modules/Date.cpp \
+			Modules/OsInfo.cpp \
+			Modules/Username.cpp
+	
             
 OBJ     =	$(patsubst srcs/%.cpp,obj/%.o,$(SRC))
 
-INCLUDE	=	Modules/Hostname.hpp 		\
-			Modules/IMonitorModule.hpp	\
-			Modules/Username.hpp		\
-			IMonitorDisplay.hpp
+INCLUDE	=	Modules/Hostname.hpp \
+			Modules/IMonitorModule.hpp \
+			Modules/Date.hpp \
+			Modules/OsInfo.hpp \
+			Modules/Username.hpp
+
 			
 all: $(NAME) 
 

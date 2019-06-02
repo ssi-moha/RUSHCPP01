@@ -13,7 +13,8 @@ public:
 
     Username &  operator=(Username const & rhs);
 
-    std::string    getUsername(void) const;
+    std::string     getUsername(void) const;
+    virtual         std::string getFormattedInfo( void ) const;
 
 private:
 
