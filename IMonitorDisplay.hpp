@@ -1,6 +1,8 @@
 #ifndef IMONITORDISPLAY_H
 # define IMONITORDISPLAY_H
 
+
+
 # include <ncurses.h>
 # include <vector>
 # include "Modules/IMonitorModule.hpp"
@@ -13,8 +15,9 @@ public:
     IMonitorDisplay(IMonitorDisplay const & src);
     ~IMonitorDisplay( void );
 
-    IMonitorDisplay &  operator=(IMonitorDisplay const & rhs);
 
+    IMonitorDisplay &  operator=(IMonitorDisplay const & rhs);
+    void    display(std::vector<IMonitorModule> _moduleTab);
     void    run();
 
 private:

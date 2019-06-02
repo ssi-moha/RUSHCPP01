@@ -10,6 +10,18 @@
 int main()
 {	
     std::vector<IMonitorModule> moduleTab;
+    moduleTab.push_back(Hostname());
+    moduleTab.push_back(Username());
+    moduleTab.push_back(Hostname());
+    moduleTab.push_back(Username());
+    moduleTab.push_back(Hostname());
+    moduleTab.push_back(Hostname());
+    moduleTab.push_back(Username());
+    moduleTab.push_back(Hostname());
+    moduleTab.push_back(Username());
+    moduleTab.push_back(Hostname());
+
+
     IMonitorDisplay display(moduleTab);
 
     display.run();
