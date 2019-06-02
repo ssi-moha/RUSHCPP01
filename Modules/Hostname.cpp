@@ -4,7 +4,7 @@
 #include <limits.h> 
 
 
-Hostname::Hostname(void) {
+Hostname::Hostname(void): AMonitorModule() {
     char hostname[64];
     
     gethostname(hostname, 64);

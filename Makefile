@@ -9,6 +9,7 @@ NAME    =	ft_gkrellm
 SRC     =   main.cpp \
 			Modules/Hostname.cpp \
 			Modules/IMonitorModule.cpp \
+			Modules/AMonitorModule.cpp \
 			Modules/Date.cpp \
 			Modules/OsInfo.cpp \
 			Modules/Username.cpp	\
@@ -19,6 +20,7 @@ OBJ     =	$(patsubst srcs/%.cpp,obj/%.o,$(SRC))
 
 INCLUDE	=	Modules/Hostname.hpp \
 			Modules/IMonitorModule.hpp \
+			Modules/AMonitorModule.hpp \
 			Modules/Date.hpp \
 			Modules/OsInfo.hpp \
 			Modules/Username.hpp \

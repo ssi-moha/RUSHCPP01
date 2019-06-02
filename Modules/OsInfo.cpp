@@ -2,7 +2,7 @@
 #include <iostream>
 #include "OsInfo.hpp"
 
-OsInfo::OsInfo(void) {
+OsInfo::OsInfo(void): AMonitorModule() {
     struct utsname osName;
     int ret = 0;
 

@@ -2,7 +2,7 @@
 
 #include "IMonitorDisplay.hpp"
 
-IMonitorDisplay::IMonitorDisplay(std::vector<IMonitorModule*> moduleTab) : _moduleTab(moduleTab) {
+IMonitorDisplay::IMonitorDisplay(std::vector<AMonitorModule*> moduleTab) : _moduleTab(moduleTab) {
     initscr();
     display(moduleTab);
 }
@@ -11,7 +11,7 @@ IMonitorDisplay::~IMonitorDisplay() {
     endwin();
 }
 
-void    IMonitorDisplay::display(std::vector<IMonitorModule*> moduleTab) {
+void    IMonitorDisplay::display(std::vector<AMonitorModule*> moduleTab) {
 
 
     
@@ -27,7 +27,8 @@ void    IMonitorDisplay::display(std::vector<IMonitorModule*> moduleTab) {
         
         _windowTab.push_back(subwin(stdscr, moduleHeigth , moduleWidth , line * moduleHeigth , col * moduleWidth));
         box(_windowTab[i], ACS_VLINE, ACS_HLINE) ;
-        mvwprintw(_windowTab[i], 1,2, "%s", _moduleTab[i]->getFormattedInfo().c_str() );
+        if (_moduleTab[i]->isOn())
+            mvwprintw(_windowTab[i], 1,2, "%s", _moduleTab[i]->getFormattedInfo().c_str() );
 
         wrefresh(_windowTab[i]);
         col++;

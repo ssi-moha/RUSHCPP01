@@ -1,10 +1,10 @@
 #ifndef OSINFO_H
 # define OSINFO_H
 # include <string>
-# include "IMonitorModule.hpp"
+# include "AMonitorModule.hpp"
 
 
-class OsInfo : public IMonitorModule {
+class OsInfo : public AMonitorModule {
 
 public:
 

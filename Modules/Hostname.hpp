@@ -1,9 +1,9 @@
 #ifndef HOSTNAME_H
 # define HOSTNAME_H
-# include "IMonitorModule.hpp"
+# include "AMonitorModule.hpp"
 # include <string>
 
-class Hostname : public IMonitorModule {
+class Hostname : public AMonitorModule {
 
 public:
 
