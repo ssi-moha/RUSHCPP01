@@ -8,11 +8,11 @@
 #include <unistd.h>
 
 #include "IMonitorDisplay.hpp"
-#include "Modules/IMonitorModule.hpp"
+#include "Modules/AMonitorModule.hpp"
 
 int main()
 {	
-    std::vector<IMonitorModule*> moduleTab;
+    std::vector<AMonitorModule*> moduleTab;
 
     moduleTab.push_back(new Hostname());
     moduleTab.push_back(new Username());

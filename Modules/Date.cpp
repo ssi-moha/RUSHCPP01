@@ -2,7 +2,7 @@
 #include <iostream>
 #include <ctime>
 
-Date::Date(void) {
+Date::Date(void): AMonitorModule() {
     time_t rawtime;
     struct tm * timeinfo;
     char buffer[80];

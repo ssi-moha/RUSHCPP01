@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <unistd.h>
 
-Username::Username(void) {
+Username::Username(void): AMonitorModule() {
     char username[64];
     getlogin_r(username, 64);
     _username = username;

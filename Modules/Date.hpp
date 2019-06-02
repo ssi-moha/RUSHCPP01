@@ -1,9 +1,9 @@
 #ifndef DATE_H
 # define DATE_H
 # include <string>
-# include "IMonitorModule.hpp"
+# include "AMonitorModule.hpp"
 
-class Date : public IMonitorModule{
+class Date : public AMonitorModule{
 
 public:
 
