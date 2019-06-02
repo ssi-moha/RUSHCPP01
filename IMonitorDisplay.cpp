@@ -21,10 +21,11 @@ void    IMonitorDisplay::display(std::vector<IMonitorModule> moduleTab) {
     int moduleWidth = 30;
     int moduleHeigth = LINES / (1 + ((moduleTab.size() + 1) * moduleWidth / COLS ));
 
+
     for (unsigned int i = 0; i <= moduleTab.size(); i++) {
         _windowTab.push_back(subwin(stdscr, moduleHeigth , moduleWidth , line * moduleHeigth , col * moduleWidth  ));
         box(_windowTab.back(), ACS_VLINE, ACS_HLINE) ;
-        mvwprintw(_windowTab.back(), 1,1, "%d",   1 + ((moduleTab.size() + 1) * moduleWidth / COLS ));
+        mvwprintw(_windowTab.back(), 1,1, "%s", _moduleTab.back().getFormattedInfo().c_str() );
         wrefresh(_windowTab[i]);
         col++;
         if (col * moduleWidth > COLS)
