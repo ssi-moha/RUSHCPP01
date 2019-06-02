@@ -33,8 +33,6 @@ void    IMonitorDisplay::display(std::vector<IMonitorModule> moduleTab) {
             line++;
         }
     }
-
-
 }
 
 void    IMonitorDisplay::run() {
