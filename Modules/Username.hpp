@@ -1,8 +1,9 @@
 #ifndef USERNAME_H
 # define USERNAME_H
 # include <string>
+# include "IMonitorModule.hpp"
 
-class Username {
+class Username : public IMonitorModule {
 
 public:
 

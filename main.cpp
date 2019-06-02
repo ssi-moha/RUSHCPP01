@@ -1,3 +1,5 @@
+#include "Modules/Hostname.hpp"
+#include "Modules/Username.hpp"
 #include <iostream>
 #include <ncurses.h>
 #include <unistd.h>
