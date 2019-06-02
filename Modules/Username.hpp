@@ -1,8 +1,9 @@
 #ifndef USERNAME_H
 # define USERNAME_H
 # include <string>
+# include "IMonitorModule.hpp"
 
-class Username {
+class Username : public IMonitorModule {
 
 public:
 
@@ -12,7 +13,8 @@ public:
 
     Username &  operator=(Username const & rhs);
 
-    std::string    getUsername(void) const;
+    std::string     getUsername(void) const;
+    virtual         std::string getFormattedInfo( void ) const;
 
 private:
 

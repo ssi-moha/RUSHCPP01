@@ -28,3 +28,9 @@ Hostname &	Hostname::operator=(Hostname const & rhs) {
 std::string	Hostname::getHostname(void) const {
     return this->_hostname;
 }
+
+std::string	Hostname::getFormattedInfo(void) const {
+    std::string formattedString = "Hostname: " + this->_hostname;
+
+    return formattedString;
+}

@@ -25,3 +25,9 @@ Username &	Username::operator=(Username const & rhs) {
 std::string	Username::getUsername(void) const {
     return this->_username;
 }
+
+std::string	Username::getFormattedInfo(void) const {
+    std::string formattedString = "Username: " + this->_username;
+
+    return formattedString;
+}
