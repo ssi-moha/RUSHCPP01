@@ -40,7 +40,7 @@ std::string	Date::now(void) const {
 
 std::string	Date::getFormattedInfo(void) const {
     std::string formattedString = "Day: " + this->_current_day 
-        + "\nTime: " + this->_current_time;
+        + "\n  Time: " + this->_current_time;
     
     return formattedString;
 }

@@ -2,18 +2,28 @@
 #include "Modules/Username.hpp"
 #include "Modules/OsInfo.hpp"
 #include "Modules/Date.hpp"
+
 #include <iostream>
+#include <ncurses.h>
+#include <unistd.h>
 
-int main(void) {
-    Hostname hostname;
-    Username username;
-    OsInfo osInfo;
-    Date date;
+#include "IMonitorDisplay.hpp"
+#include "Modules/IMonitorModule.hpp"
 
-    std::cout << hostname.getFormattedInfo() << std::endl;
-    std::cout << username.getFormattedInfo() << std::endl;
-    std::cout << osInfo.getFormattedInfo() << std::endl;
-    std::cout << date.getFormattedInfo() << std::endl;
+int main()
+{	
+    std::vector<IMonitorModule*> moduleTab;
+
+    moduleTab.push_back(new Hostname());
+    moduleTab.push_back(new Username());
+    moduleTab.push_back(new OsInfo());
+    moduleTab.push_back(new Date());
+
+
+
+    IMonitorDisplay display(moduleTab);
+    
+    display.run();
     
     return 0;
 }

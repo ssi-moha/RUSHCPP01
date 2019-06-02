@@ -60,10 +60,10 @@ std::string	OsInfo::getVersion(void) const {
 std::string	OsInfo::getFormattedInfo( void ) const {
     std::string formattedString = 
         "Machine: " + this->_machine
-        + "\nNodename: " + this->_nodename
-        + "\nRelease: " + this->_release
-        + "\nSysname" + this->_sysname
-        + "\nVersion: " + this->_version;
+        + "\n  Nodename: " + this->_nodename
+        + "\n  Release: " + this->_release
+        + "\n  Sysname" + this->_sysname
+        + "\n  ersion: " + this->_version;
 
     return formattedString;
 }

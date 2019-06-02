@@ -2,16 +2,17 @@
 
 CC		=	clang++
 
-FLAG	=	-Wall -Wextra -Werror
+FLAG	=	-Wall -Wextra -Werror -lncurses
 
-NAME    =	find
+NAME    =	ft_gkrellm
 
-SRC     =   srcs/main.cpp \
+SRC     =   main.cpp \
 			Modules/Hostname.cpp \
 			Modules/IMonitorModule.cpp \
 			Modules/Date.cpp \
 			Modules/OsInfo.cpp \
-			Modules/Username.cpp
+			Modules/Username.cpp	\
+			IMonitorDisplay.cpp	
 	
             
 OBJ     =	$(patsubst srcs/%.cpp,obj/%.o,$(SRC))
@@ -20,13 +21,14 @@ INCLUDE	=	Modules/Hostname.hpp \
 			Modules/IMonitorModule.hpp \
 			Modules/Date.hpp \
 			Modules/OsInfo.hpp \
-			Modules/Username.hpp
+			Modules/Username.hpp \
+			IMonitorDisplay.hpp
 
 			
 all: $(NAME) 
 
 $(NAME): $(OBJ) $(INCLUDE)
-		$(CC) $(FLAG) $(SRC) -o $(NAME)
+		$(CC) $(FLAG) $(OBJ) -o $(NAME)
 
 obj/%.o: srcs/%.cpp
 		mkdir -p obj

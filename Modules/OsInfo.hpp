@@ -4,7 +4,7 @@
 # include "IMonitorModule.hpp"
 
 
-class OsInfo : IMonitorModule {
+class OsInfo : public IMonitorModule {
 
 public:
 
