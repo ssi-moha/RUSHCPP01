@@ -10,7 +10,7 @@ Date::Date(void) {
     time (&rawtime);
     timeinfo = localtime(&rawtime);
 
-    strftime(buffer,sizeof(buffer),"%d-%m-%Y %H:%M:%S",timeinfo);
+    strftime(buffer, sizeof(buffer), "%d-%m-%Y %H:%M:%S",timeinfo);
     std::string str(buffer);
 
     _current_day = str.substr(0, str.find(" "));
